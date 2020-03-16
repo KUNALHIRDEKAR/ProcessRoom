@@ -1,0 +1,59 @@
+package com.icici.ivault.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import com.icici.ivault.constant.AllConstant;
+import com.icici.ivault.processRoomBO.Denomination;
+import com.icici.ivault.processRoomDTO.DenominationDTO;
+import com.icici.ivault.repository.DenominationRepository;
+
+@Controller
+public class DenominationController {
+	
+	@Autowired
+	DenominationRepository denominationRepository;
+	
+	@RequestMapping("/addDeno")  
+	public String addDenoIntoList(Model model)
+	{
+		DenominationDTO denominationDTO =new DenominationDTO();
+		model.addAttribute(AllConstant.GET_DENO_ATTRIBUTE,denominationDTO);
+		return AllConstant.GET_DENO_PAGE;
+	}
+	@RequestMapping(value = "processDenomination" ,method = RequestMethod.POST)
+	public String processDenomination(@ModelAttribute("denominationDTO") DenominationDTO denominationDTO,Model model)
+	{
+		Denomination deno=new Denomination();
+		BeanUtils.copyProperties(denominationDTO, deno);
+
+		denominationRepository.save(deno); 
+		model.addAttribute("deno",denominationDTO);
+		return "viewNewDenomination";
+	}
+	@RequestMapping("/getAllDenomination")
+	public String getView(Model model)
+	{
+		
+		Iterable<Denomination> denoBO=denominationRepository.findAll();
+		List<DenominationDTO> denoDTO=new ArrayList();
+		for(Denomination dao:denoBO)
+		{
+			DenominationDTO d=new DenominationDTO();
+			BeanUtils.copyProperties(dao, d);
+			denoDTO.add(d);
+		}
+		
+		model.addAttribute("denoList",denoDTO);
+		return"viewNewDenomination";
+	}
+	
+}

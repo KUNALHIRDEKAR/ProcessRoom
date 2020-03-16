@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<table border="1" >
+		<thead>
+			<tr>
+				<th>Sr.</th>
+				<th>demoID</th>
+				<th>noteDenomination</th>
+				<th>denoFlag</th>
+				<th>denoSeries</th>
+				<th>Update</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${denoList}" var="denoList" varStatus="myIndex">
+				<tr>
+					<td>${myIndex.index +1}</td>
+					<td>${denoList.demoID}</td>
+					<td>${denoList.noteDenomination}</td>
+					<td>${denoList.denoFlag}</td>
+					<td>${denoList.denoSeries}</td>
+					<td><a href="editUser?uid=${user.uid}"><i class='fas fa-edit' style='color:red'><span class="tooltiptext">Edit</span></i></a> &nbsp;&nbsp; <a href="deleteUser?uid=${user.uid}"
+						onclick="return confirm('Are you sure to Delete?')"><i class='fas fa-trash-alt' ><span class="tooltiptext">Delete</span></i></a></td>
+				</tr>
+			</c:forEach>
+
+		</tbody>
+
+		
+	</table>
+</body>
+</html>

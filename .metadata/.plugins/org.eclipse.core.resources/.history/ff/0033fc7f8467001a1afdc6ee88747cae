@@ -1,0 +1,8 @@
+package com.icici.ivault.constant;
+
+public class AllConstant {
+	 
+	public static String GET_DENO_PAGE="getDenoPage";
+	public static String GET_DENO_ATTRIBUTE="denominationDTO";
+
+}

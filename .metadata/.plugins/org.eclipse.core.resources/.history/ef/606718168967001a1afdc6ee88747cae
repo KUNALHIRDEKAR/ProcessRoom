@@ -1,0 +1,29 @@
+package com.icici.ivault.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import com.icici.ivault.constant.AllConstant;
+import com.icici.ivault.processRoomDTO.DenominationDTO;
+
+@Controller
+@RequestMapping("/")
+public class DenominationController {
+	@RequestMapping("/addDeno")  
+	public String addDenoIntoList(Model model)
+	{
+		DenominationDTO denominationDTO =new DenominationDTO();
+		model.addAttribute(AllConstant.GET_DENO_ATTRIBUTE,denominationDTO);
+		return AllConstant.GET_DENO_PAGE;
+	}
+	
+	public String processDenomination(@ModelAttribute("denominationDTO") DenominationDTO denominationDTO,Model model)
+	{
+		model.addAttribute("deno",denominationDTO);
+		return "viewNewDenomination";
+	}
+}

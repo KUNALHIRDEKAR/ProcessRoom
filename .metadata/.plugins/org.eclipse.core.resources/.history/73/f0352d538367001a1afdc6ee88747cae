@@ -1,0 +1,9 @@
+package com.icici.ivault.processRoomDTO;
+
+public class DenominationDTO {
+
+	private int noteDenomination;
+	private int denoFlag;
+	private int denoSeries;
+
+}

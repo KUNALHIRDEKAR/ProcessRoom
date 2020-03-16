@@ -1,0 +1,23 @@
+package com.icici.ivault.processRoomBO;
+
+public class ProcessRoomBo {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+	private long prReqNO;
+	//@GeneratedValue(strategy = GenerationType.AUTO)
+	private long prREqSeq;
+	private int prReqBankIrd;//NA
+	private int prReqIcmcID;
+	private int prDenoId;
+	private int prReqBundles;
+	private long prReqDenoinationValue;
+	private int prInwReqNo;
+	private int prInwReqSeq;
+	private Date prChestOutTime;
+	private int prChestUserId;
+	private int prReqDenominationPack;
+	private Date prReqCashReciptTime;
+	private String prReqCashReciptEmpid;
+
+}

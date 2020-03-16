@@ -1,0 +1,13 @@
+package com.icici.ivault;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+@Controller
+class ProcessRoomController {
+
+	public String getPage(Model model) {
+		
+		return "";
+	}
+}

@@ -1,0 +1,12 @@
+package com.icici.ivault.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class DenominationController {
+
+	public String addDenoIntoList()
+	{
+		return "";
+	}
+}

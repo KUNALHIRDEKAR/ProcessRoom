@@ -1,0 +1,8 @@
+package com.icici.ivault.processRoomBO;
+
+import lombok.Data;
+
+@Data
+public class Denomination {
+	
+}

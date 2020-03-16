@@ -1,0 +1,7 @@
+package com.icici.ivault.constant;
+
+public class ALLConstant {
+	 
+	public String GET_DENO_PAGE="getDenoPage";
+
+}

@@ -1,0 +1,5 @@
+package com.icici.ivault.repository;
+
+public class DenominationRepository {
+
+}

@@ -1,0 +1,13 @@
+package com.icici.ivault.processRoomBO;
+
+import lombok.Data;
+
+@Data
+public class Denomination {
+	
+	private int demoID;
+	private int noteDenomination;
+	private int denoFlag;
+	private int denoSeries;
+
+}

@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form:form action="processDenomination" method="post"
+		modelAttribute="denominationDTO">
+		<tr>
+			<th>Note Denomination</th>
+			<th>Nate/Coin</th>
+			<th>Series</th>
+		</tr>
+		<tr>
+			<td><form:input path="noteDenomination" /></td>
+			<td><form:input path="denoFlag"/></td>
+			<td><form:input path="denoSeries"/></td>
+		</tr>
+
+	</form:form>
+</body>
+</html>
